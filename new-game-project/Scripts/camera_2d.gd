@@ -17,7 +17,7 @@ func _ready() -> void:
 		push_error("Shadow render not found!")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if shadow_camera:
 		shadow_camera.global_position = global_position
 		shadow_camera.zoom = zoom

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://do4gwo11w6xme"]
+
+[ext_resource type="AudioStream" uid="uid://bb4a0hv8341sf" path="res://Assets/music/Jazz_BGM1.mp3" id="1_jij0t"]
+
+[node name="Music" type="AudioStreamPlayer2D"]
+position = Vector2(604, 1019)
+stream = ExtResource("1_jij0t")
+autoplay = true

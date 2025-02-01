@@ -1,12 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://dcj4t50b8s3ti"]
+[gd_scene load_steps=8 format=3 uid="uid://dcj4t50b8s3ti"]
 
 [ext_resource type="PackedScene" uid="uid://crodb6x8shufn" path="res://Scenes/player.tscn" id="1_oxx6r"]
 [ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="2_0whpv"]
 [ext_resource type="PackedScene" uid="uid://ccj6jsj2jhjmt" path="res://Prefabs/Cabinet_Floor.tscn" id="2_hbprv"]
+[ext_resource type="PackedScene" uid="uid://b724cpqe1drqg" path="res://Scenes/killzone.tscn" id="3_wjdh8"]
 [ext_resource type="Material" uid="uid://btp8coc7tkknn" path="res://Assets/Shaders/Shadow_Shader.tres" id="4_33kly"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_te4ws"]
 viewport_path = NodePath("Shadow_Container/ShadowViewport")
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_612by"]
 
 [node name="Game" type="Node2D"]
 
@@ -14,7 +17,9 @@ viewport_path = NodePath("Shadow_Container/ShadowViewport")
 position = Vector2(-29, -43)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(29, 43)
+position = Vector2(-16, 48)
+limit_bottom = 850
+limit_smoothed = true
 script = ExtResource("2_0whpv")
 shadow_camera_path = NodePath("../../Shadow_Container/ShadowViewport/Shadow_Camera")
 shadow_render_path = NodePath("../../Shadow_Container/Shadow_Render")
@@ -48,3 +53,9 @@ grow_vertical = 2
 scale = Vector2(2, 2)
 texture = SubResource("ViewportTexture_te4ws")
 metadata/_edit_use_anchors_ = true
+
+[node name="Killzone" parent="." instance=ExtResource("3_wjdh8")]
+position = Vector2(604, 1019)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+shape = SubResource("WorldBoundaryShape2D_612by")

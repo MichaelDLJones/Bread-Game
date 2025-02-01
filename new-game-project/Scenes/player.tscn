@@ -16,6 +16,9 @@ radius = 89.4986
 size = Vector2(440, 79)
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 5
+position = Vector2(-18, -11)
+collision_layer = 2
 script = ExtResource("1_eg6vk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

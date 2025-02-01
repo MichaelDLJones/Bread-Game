@@ -1,12 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://dt4w4akrs7j4k"]
+[gd_scene load_steps=10 format=3 uid="uid://bjj55bfmxwotb"]
 
 [ext_resource type="Texture2D" uid="uid://b5c8ewyvvm3we" path="res://Assets/Textures/T_Background.png" id="1_5x5lf"]
 [ext_resource type="Texture2D" uid="uid://dhbk0kk0g0smp" path="res://Assets/Textures/T_Dough.png" id="4_nlly7"]
 [ext_resource type="PackedScene" uid="uid://ckbg568ovr2ib" path="res://Prefabs/Cabinet_Ceiling.tscn" id="6_phhgk"]
-[ext_resource type="PackedScene" uid="uid://b3bd1yfpqlvjp" path="res://Prefabs/Shelf.tscn" id="7_qev2f"]
+[ext_resource type="PackedScene" path="res://Prefabs/Shelf.tscn" id="7_qev2f"]
 [ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="7_v4yq0"]
 [ext_resource type="Material" uid="uid://btp8coc7tkknn" path="res://Assets/Shaders/Shadow_Shader.tres" id="8_h3px7"]
-[ext_resource type="PackedScene" uid="uid://m7puny6btnq5" path="res://Prefabs/Plant_01.tscn" id="8_wqves"]
+[ext_resource type="PackedScene" path="res://Prefabs/Plant_01.tscn" id="8_wqves"]
 [ext_resource type="PackedScene" uid="uid://ccj6jsj2jhjmt" path="res://Prefabs/Cabinet_Floor.tscn" id="9_jcn7j"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_x6ona"]

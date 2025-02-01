@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dcj4t50b8s3ti"]
 
-[ext_resource type="PackedScene" uid="uid://oi5t4alxf7u2" path="res://Scenes/player.tscn" id="1_oxx6r"]
+[ext_resource type="PackedScene" uid="uid://crodb6x8shufn" path="res://Scenes/player.tscn" id="1_oxx6r"]
 [ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="2_0whpv"]
 [ext_resource type="PackedScene" uid="uid://ccj6jsj2jhjmt" path="res://Prefabs/Cabinet_Floor.tscn" id="2_hbprv"]
 [ext_resource type="Material" uid="uid://btp8coc7tkknn" path="res://Assets/Shaders/Shadow_Shader.tres" id="4_33kly"]

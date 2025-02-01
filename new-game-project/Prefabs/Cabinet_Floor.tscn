@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccj6jsj2jhjmt"]
+
+[ext_resource type="Texture2D" uid="uid://8xc86ytjj670" path="res://Assets/Textures/T_Cabinet_Floor_Shadowmask.png" id="1_h53pk"]
+[ext_resource type="Script" path="res://Scripts/shadow_script.gd" id="2_783y5"]
+[ext_resource type="Texture2D" uid="uid://ctxrmrvsuo1qx" path="res://Assets/Textures/T_Cabinet_Floor.png" id="3_wphxj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dm7sn"]
+size = Vector2(642, 730)
+
+[node name="CabinetFloor" type="Node2D" node_paths=PackedStringArray("target_shadow_Sprite")]
+script = ExtResource("2_783y5")
+target_shadow_Sprite = NodePath("Cabinet_Floor_Shadow")
+
+[node name="Cabinet_Floor_Shadow" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(0, 512)
+texture = ExtResource("1_h53pk")
+
+[node name="Cabinet_Floor_StaticBody" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cabinet_Floor_StaticBody"]
+position = Vector2(0, 365)
+shape = SubResource("RectangleShape2D_dm7sn")
+
+[node name="Cabinet_Floor_Sprite" type="Sprite2D" parent="Cabinet_Floor_StaticBody"]
+z_index = 2
+position = Vector2(0, 512)
+texture = ExtResource("3_wphxj")
+region_rect = Rect2(191, 0, 643, 730)

@@ -1,16 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://bjj55bfmxwotb"]
+[gd_scene load_steps=7 format=3 uid="uid://dt4w4akrs7j4k"]
 
 [ext_resource type="Texture2D" uid="uid://b5c8ewyvvm3we" path="res://Assets/Textures/T_Background.png" id="1_5x5lf"]
-[ext_resource type="Texture2D" uid="uid://ctxrmrvsuo1qx" path="res://Assets/Textures/T_Cabinet_Floor.png" id="2_muea6"]
-[ext_resource type="Texture2D" uid="uid://1xodg3ddlugy" path="res://Assets/Textures/T_Cabinet_Wall.png" id="3_g4o14"]
 [ext_resource type="Texture2D" uid="uid://dhbk0kk0g0smp" path="res://Assets/Textures/T_Dough.png" id="4_nlly7"]
-[ext_resource type="Texture2D" uid="uid://bhlcafn4s8acx" path="res://Assets/Textures/T_Cabinet_Wall_Shadowmask.png" id="5_qsww8"]
-[ext_resource type="Texture2D" uid="uid://8xc86ytjj670" path="res://Assets/Textures/T_Cabinet_Floor_Shadowmask.png" id="6_c2r37"]
-[ext_resource type="Texture2D" uid="uid://cqt5lacw4xoeo" path="res://Assets/Textures/T_Dough_Shadowmask.png" id="7_hwqrv"]
+[ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="7_v4yq0"]
 [ext_resource type="Material" uid="uid://btp8coc7tkknn" path="res://Assets/Shaders/Shadow_Shader.tres" id="8_h3px7"]
+[ext_resource type="PackedScene" uid="uid://ccj6jsj2jhjmt" path="res://Prefabs/Cabinet_Floor.tscn" id="9_jcn7j"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_x6ona"]
-viewport_path = NodePath("ShadowViewport")
+viewport_path = NodePath("Shadow_Container/ShadowViewport")
 
 [node name="Node2D" type="Node2D"]
 
@@ -31,57 +28,6 @@ offset_right = 2048.0
 offset_bottom = 2048.0
 texture = ExtResource("1_5x5lf")
 
-[node name="Cabinet" type="Node2D" parent="."]
-position = Vector2(2048, 1314)
-
-[node name="TextureRect2" type="TextureRect" parent="Cabinet"]
-z_index = 2
-z_as_relative = false
-offset_right = 1024.0
-offset_bottom = 1024.0
-texture = ExtResource("2_muea6")
-
-[node name="Cabinet2" type="Node2D" parent="."]
-position = Vector2(1408, 1314)
-
-[node name="TextureRect2" type="TextureRect" parent="Cabinet2"]
-z_index = 2
-z_as_relative = false
-offset_right = 1024.0
-offset_bottom = 1024.0
-texture = ExtResource("2_muea6")
-
-[node name="Cabinet3" type="Node2D" parent="."]
-position = Vector2(768, 1314)
-
-[node name="TextureRect2" type="TextureRect" parent="Cabinet3"]
-z_index = 2
-z_as_relative = false
-offset_right = 1024.0
-offset_bottom = 1024.0
-texture = ExtResource("2_muea6")
-
-[node name="Cabinet4" type="Node2D" parent="."]
-position = Vector2(768, -113)
-
-[node name="TextureRect2" type="TextureRect" parent="Cabinet4"]
-z_index = 2
-z_as_relative = false
-offset_right = 1024.0
-offset_bottom = 1024.0
-texture = ExtResource("3_g4o14")
-metadata/_edit_use_anchors_ = true
-
-[node name="Cabinet5" type="Node2D" parent="."]
-position = Vector2(1409, -113)
-
-[node name="TextureRect2" type="TextureRect" parent="Cabinet5"]
-z_index = 2
-z_as_relative = false
-offset_right = 1024.0
-offset_bottom = 1024.0
-texture = ExtResource("3_g4o14")
-
 [node name="Dough" type="Node2D" parent="."]
 position = Vector2(1611, 878)
 scale = Vector2(0.5, 0.5)
@@ -94,80 +40,46 @@ offset_bottom = 1024.0
 texture = ExtResource("4_nlly7")
 metadata/_edit_use_anchors_ = true
 
-[node name="ShadowViewport" type="SubViewport" parent="."]
-size = Vector2i(4096, 2048)
+[node name="Shadow_Container" type="Node2D" parent="."]
+
+[node name="ShadowViewport" type="SubViewport" parent="Shadow_Container"]
+transparent_bg = true
+size = Vector2i(2048, 2048)
 render_target_update_mode = 4
 
-[node name="Cabinet4" type="Node2D" parent="ShadowViewport"]
-position = Vector2(768, -113)
+[node name="Shadow_Camera" type="Camera2D" parent="Shadow_Container/ShadowViewport"]
 
-[node name="TextureRect" type="TextureRect" parent="ShadowViewport/Cabinet4"]
-z_index = 1
-z_as_relative = false
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("5_qsww8")
-
-[node name="Cabinet5" type="Node2D" parent="ShadowViewport"]
-position = Vector2(1409, -113)
-
-[node name="TextureRect" type="TextureRect" parent="ShadowViewport/Cabinet5"]
-z_index = 1
-z_as_relative = false
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("5_qsww8")
-
-[node name="ColorRect" type="ColorRect" parent="ShadowViewport"]
-z_as_relative = false
-offset_right = 4096.0
-offset_bottom = 2048.0
-
-[node name="Cabinet" type="Node2D" parent="ShadowViewport"]
-position = Vector2(2048, 1314)
-
-[node name="TextureRect" type="TextureRect" parent="ShadowViewport/Cabinet"]
-z_index = 1
-z_as_relative = false
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("6_c2r37")
-
-[node name="Cabinet2" type="Node2D" parent="ShadowViewport"]
-position = Vector2(1408, 1314)
-
-[node name="TextureRect" type="TextureRect" parent="ShadowViewport/Cabinet2"]
-z_index = 1
-z_as_relative = false
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("6_c2r37")
-
-[node name="Cabinet3" type="Node2D" parent="ShadowViewport"]
-position = Vector2(768, 1314)
-
-[node name="TextureRect" type="TextureRect" parent="ShadowViewport/Cabinet3"]
-z_index = 1
-z_as_relative = false
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("6_c2r37")
-
-[node name="Dough2" type="Node2D" parent="ShadowViewport"]
-position = Vector2(1611, 878)
-scale = Vector2(0.5, 0.5)
-
-[node name="TextureRect" type="TextureRect" parent="ShadowViewport/Dough2"]
-z_index = 1
-z_as_relative = false
-offset_right = 1024.0
-offset_bottom = 1024.0
-texture = ExtResource("7_hwqrv")
-
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Shadow_Render" type="TextureRect" parent="Shadow_Container"]
 z_index = 1
 z_as_relative = false
 material = ExtResource("8_h3px7")
-offset_right = 4096.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 2048.0
 offset_bottom = 2048.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
 texture = SubResource("ViewportTexture_x6ona")
+
+[node name="CabinetFloor" parent="." instance=ExtResource("9_jcn7j")]
+position = Vector2(1824, 1315)
+target_viewport_path = NodePath("../Shadow_Container/ShadowViewport")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(626, 1143)
+zoom = Vector2(0.355, 0.355)
+script = ExtResource("7_v4yq0")
+shadow_camera_path = NodePath("../Shadow_Container/ShadowViewport/Shadow_Camera")
+shadow_render_path = NodePath("../Shadow_Container/Shadow_Render")
+
+[node name="CabinetFloor2" parent="." instance=ExtResource("9_jcn7j")]
+position = Vector2(1184, 1315)
+target_viewport_path = NodePath("../Shadow_Container/ShadowViewport")
+
+[node name="CabinetFloor3" parent="." instance=ExtResource("9_jcn7j")]
+position = Vector2(2465, 1315)
+target_viewport_path = NodePath("../Shadow_Container/ShadowViewport")

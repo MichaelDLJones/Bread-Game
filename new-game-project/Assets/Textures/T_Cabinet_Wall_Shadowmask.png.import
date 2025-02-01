@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhbk0kk0g0smp"
-path="res://.godot/imported/T_Dough.png-8c27c573d008180881822489fc6f90b0.ctex"
+uid="uid://bhlcafn4s8acx"
+path="res://.godot/imported/T_Cabinet_Wall_Shadowmask.png-2ce9bff59fedccc829fcd9db3e7ec1a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/T_Dough.png"
-dest_files=["res://.godot/imported/T_Dough.png-8c27c573d008180881822489fc6f90b0.ctex"]
+source_file="res://Assets/Textures/T_Cabinet_Wall_Shadowmask.png"
+dest_files=["res://.godot/imported/T_Cabinet_Wall_Shadowmask.png-2ce9bff59fedccc829fcd9db3e7ec1a2.ctex"]
 
 [params]
 

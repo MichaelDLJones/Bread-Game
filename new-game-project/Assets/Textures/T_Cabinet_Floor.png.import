@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5c8ewyvvm3we"
-path="res://.godot/imported/T_Background.png-d366bd94777b502fc49f0065e57ed661.ctex"
+uid="uid://ctxrmrvsuo1qx"
+path="res://.godot/imported/T_Cabinet_Floor.png-a1e6f640f644e1b150d4d25e1fcbd818.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/T_Background.png"
-dest_files=["res://.godot/imported/T_Background.png-d366bd94777b502fc49f0065e57ed661.ctex"]
+source_file="res://Assets/Textures/T_Cabinet_Floor.png"
+dest_files=["res://.godot/imported/T_Cabinet_Floor.png-a1e6f640f644e1b150d4d25e1fcbd818.ctex"]
 
 [params]
 

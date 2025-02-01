@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ip45m1dsciy5"
-path="res://.godot/imported/T_Dough_Shadowmask.png-7f822c770d6c79e0e664ea64d4e18cf7.ctex"
+uid="uid://cqt5lacw4xoeo"
+path="res://.godot/imported/T_Dough_Shadowmask.png-538c45c4d0ed59bbb2acf77adaf64aec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/T_Dough_Shadowmask.png"
-dest_files=["res://.godot/imported/T_Dough_Shadowmask.png-7f822c770d6c79e0e664ea64d4e18cf7.ctex"]
+source_file="res://Assets/Textures/T_Dough_Shadowmask.png"
+dest_files=["res://.godot/imported/T_Dough_Shadowmask.png-538c45c4d0ed59bbb2acf77adaf64aec.ctex"]
 
 [params]
 

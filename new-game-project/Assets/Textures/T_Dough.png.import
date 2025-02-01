@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dx63vmhu2cmbf"
-path="res://.godot/imported/T_Cabinet_Floor_Shadowmask.png-aba5e62b8c6298464550ee664b8342ba.ctex"
+uid="uid://dhbk0kk0g0smp"
+path="res://.godot/imported/T_Dough.png-7fa735cdd673b93752bd92ca6a8966bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/T_Cabinet_Floor_Shadowmask.png"
-dest_files=["res://.godot/imported/T_Cabinet_Floor_Shadowmask.png-aba5e62b8c6298464550ee664b8342ba.ctex"]
+source_file="res://Assets/Textures/T_Dough.png"
+dest_files=["res://.godot/imported/T_Dough.png-7fa735cdd673b93752bd92ca6a8966bd.ctex"]
 
 [params]
 

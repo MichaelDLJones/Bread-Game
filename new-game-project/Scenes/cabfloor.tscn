@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmo83ew26svqp"]
+
+[ext_resource type="Texture2D" uid="uid://8xc86ytjj670" path="res://Assets/Textures/T_Cabinet_Floor_Shadowmask.png" id="1_k6r1m"]
+[ext_resource type="Texture2D" uid="uid://ctxrmrvsuo1qx" path="res://Assets/Textures/T_Cabinet_Floor.png" id="2_4g1ig"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ca2p6"]
+size = Vector2(641, 729)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_k6r1m")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(0, -2)
+texture = ExtResource("2_4g1ig")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5, -147)
+shape = SubResource("RectangleShape2D_ca2p6")

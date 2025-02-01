@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://m7puny6btnq5"]
+
+[ext_resource type="Script" path="res://Scripts/shadow_script.gd" id="1_hnh0e"]
+[ext_resource type="Texture2D" uid="uid://c4uygiicio21k" path="res://Assets/Textures/T_Plant_01_Shadowmask.png" id="2_a17qs"]
+[ext_resource type="Texture2D" uid="uid://c3gj486oghiq7" path="res://Assets/Textures/T_Plant_01.png" id="3_dpon1"]
+
+[node name="Plant_01" type="Node2D" node_paths=PackedStringArray("target_shadow_Sprite")]
+script = ExtResource("1_hnh0e")
+target_shadow_Sprite = NodePath("Plant_Shadow")
+
+[node name="Plant_Shadow" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-23, -234)
+texture = ExtResource("2_a17qs")
+region_rect = Rect2(0, 510, 1024, 226)
+
+[node name="Plant_Sprite" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-23, -234)
+texture = ExtResource("3_dpon1")
+region_rect = Rect2(145, 510, 734, 187)

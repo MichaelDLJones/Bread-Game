@@ -1,0 +1,131 @@
+[gd_scene load_steps=8 format=3 uid="uid://dt4w4akrs7j4k"]
+
+[ext_resource type="Texture2D" uid="uid://b5c8ewyvvm3we" path="res://Textures/T_Background.png" id="1_tftu4"]
+[ext_resource type="Texture2D" uid="uid://dx63vmhu2cmbf" path="res://Textures/T_Cabinet_Floor_Shadowmask.png" id="2_yg16a"]
+[ext_resource type="Texture2D" uid="uid://ctxrmrvsuo1qx" path="res://Textures/T_Cabinet_Floor.png" id="3_j3rqw"]
+[ext_resource type="Texture2D" uid="uid://cubronns6ul0y" path="res://Textures/T_Cabinet_Wall_Shadowmask.png" id="4_u0lua"]
+[ext_resource type="Texture2D" uid="uid://1xodg3ddlugy" path="res://Textures/T_Cabinet_Wall.png" id="5_4p8de"]
+[ext_resource type="Texture2D" uid="uid://ip45m1dsciy5" path="res://Textures/T_Dough_Shadowmask.png" id="6_iahwn"]
+[ext_resource type="Texture2D" uid="uid://dhbk0kk0g0smp" path="res://Textures/T_Dough.png" id="7_4ja1e"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+z_as_relative = false
+offset_right = 2048.0
+offset_bottom = 2048.0
+texture = ExtResource("1_tftu4")
+
+[node name="Background2" type="Node2D" parent="."]
+position = Vector2(2048, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Background2"]
+z_as_relative = false
+offset_right = 2048.0
+offset_bottom = 2048.0
+texture = ExtResource("1_tftu4")
+
+[node name="Cabinet" type="Node2D" parent="."]
+position = Vector2(2048, 1314)
+
+[node name="TextureRect" type="TextureRect" parent="Cabinet"]
+z_index = 1
+z_as_relative = false
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_yg16a")
+
+[node name="TextureRect2" type="TextureRect" parent="Cabinet/TextureRect"]
+z_index = 2
+z_as_relative = false
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_j3rqw")
+
+[node name="Cabinet2" type="Node2D" parent="."]
+position = Vector2(1408, 1314)
+
+[node name="TextureRect" type="TextureRect" parent="Cabinet2"]
+z_index = 1
+z_as_relative = false
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_yg16a")
+
+[node name="TextureRect2" type="TextureRect" parent="Cabinet2/TextureRect"]
+z_index = 2
+z_as_relative = false
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_j3rqw")
+
+[node name="Cabinet3" type="Node2D" parent="."]
+position = Vector2(768, 1314)
+
+[node name="TextureRect" type="TextureRect" parent="Cabinet3"]
+z_index = 1
+z_as_relative = false
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_yg16a")
+
+[node name="TextureRect2" type="TextureRect" parent="Cabinet3/TextureRect"]
+z_index = 2
+z_as_relative = false
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_j3rqw")
+
+[node name="Cabinet4" type="Node2D" parent="."]
+position = Vector2(768, -113)
+
+[node name="TextureRect" type="TextureRect" parent="Cabinet4"]
+z_index = 1
+z_as_relative = false
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_u0lua")
+
+[node name="TextureRect2" type="TextureRect" parent="Cabinet4/TextureRect"]
+z_index = 2
+z_as_relative = false
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_4p8de")
+
+[node name="Cabinet5" type="Node2D" parent="."]
+position = Vector2(1409, -113)
+
+[node name="TextureRect" type="TextureRect" parent="Cabinet5"]
+z_index = 1
+z_as_relative = false
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_u0lua")
+
+[node name="TextureRect2" type="TextureRect" parent="Cabinet5/TextureRect"]
+z_index = 2
+z_as_relative = false
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_4p8de")
+
+[node name="Dough" type="Node2D" parent="."]
+position = Vector2(1551, 979)
+scale = Vector2(0.5, 0.5)
+
+[node name="TextureRect" type="TextureRect" parent="Dough"]
+z_index = 1
+z_as_relative = false
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_iahwn")
+
+[node name="TextureRect2" type="TextureRect" parent="Dough/TextureRect"]
+z_index = 2
+z_as_relative = false
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("7_4ja1e")

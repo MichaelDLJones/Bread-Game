@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dt4w4akrs7j4k"]
+[gd_scene load_steps=8 format=3 uid="uid://dt4w4akrs7j4k"]
 
 [ext_resource type="Texture2D" uid="uid://b5c8ewyvvm3we" path="res://Assets/Textures/T_Background.png" id="1_5x5lf"]
 [ext_resource type="Texture2D" uid="uid://dhbk0kk0g0smp" path="res://Assets/Textures/T_Dough.png" id="4_nlly7"]
+[ext_resource type="PackedScene" uid="uid://ckbg568ovr2ib" path="res://Prefabs/Cabinet_Ceiling.tscn" id="6_phhgk"]
 [ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="7_v4yq0"]
 [ext_resource type="Material" uid="uid://btp8coc7tkknn" path="res://Assets/Shaders/Shadow_Shader.tres" id="8_h3px7"]
 [ext_resource type="PackedScene" uid="uid://ccj6jsj2jhjmt" path="res://Prefabs/Cabinet_Floor.tscn" id="9_jcn7j"]
@@ -64,13 +65,14 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
 texture = SubResource("ViewportTexture_x6ona")
+metadata/_edit_use_anchors_ = true
 
 [node name="CabinetFloor" parent="." instance=ExtResource("9_jcn7j")]
 position = Vector2(1824, 1315)
 target_viewport_path = NodePath("../Shadow_Container/ShadowViewport")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(626, 1143)
+position = Vector2(1705, 1193)
 zoom = Vector2(0.355, 0.355)
 script = ExtResource("7_v4yq0")
 shadow_camera_path = NodePath("../Shadow_Container/ShadowViewport/Shadow_Camera")
@@ -82,4 +84,12 @@ target_viewport_path = NodePath("../Shadow_Container/ShadowViewport")
 
 [node name="CabinetFloor3" parent="." instance=ExtResource("9_jcn7j")]
 position = Vector2(2465, 1315)
+target_viewport_path = NodePath("../Shadow_Container/ShadowViewport")
+
+[node name="CabinetCeiling" parent="." instance=ExtResource("6_phhgk")]
+position = Vector2(1843, 854)
+target_viewport_path = NodePath("../Shadow_Container/ShadowViewport")
+
+[node name="CabinetCeiling2" parent="." instance=ExtResource("6_phhgk")]
+position = Vector2(2484, 854)
 target_viewport_path = NodePath("../Shadow_Container/ShadowViewport")

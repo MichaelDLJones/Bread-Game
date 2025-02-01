@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckbg568ovr2ib"]
+
+[ext_resource type="Script" path="res://Scripts/shadow_script.gd" id="1_ubeh2"]
+[ext_resource type="Texture2D" uid="uid://bhlcafn4s8acx" path="res://Assets/Textures/T_Cabinet_Ceiling_Shadowmask.png" id="2_02jnx"]
+[ext_resource type="Texture2D" uid="uid://1xodg3ddlugy" path="res://Assets/Textures/T_Cabinet_Ceiling.png" id="3_0jc1y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_klg2n"]
+size = Vector2(642, 730)
+
+[node name="CabinetCeiling" type="Node2D" node_paths=PackedStringArray("target_shadow_Sprite")]
+script = ExtResource("1_ubeh2")
+target_shadow_Sprite = NodePath("Cabinet_Ceiling_Shadow")
+
+[node name="Cabinet_Ceiling_Shadow" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(0, -219)
+texture = ExtResource("2_02jnx")
+
+[node name="Cabinet_Ceiling_StaticBody" type="StaticBody2D" parent="."]
+position = Vector2(0, -731)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cabinet_Ceiling_StaticBody"]
+position = Vector2(0, 365)
+shape = SubResource("RectangleShape2D_klg2n")
+
+[node name="Cabinet_Ceiling_Sprite" type="Sprite2D" parent="Cabinet_Ceiling_StaticBody"]
+z_index = 2
+position = Vector2(0, 512)
+texture = ExtResource("3_0jc1y")
+region_rect = Rect2(191, 0, 643, 730)

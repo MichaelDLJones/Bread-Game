@@ -1,14 +1,50 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcj4t50b8s3ti"]
+[gd_scene load_steps=6 format=3 uid="uid://dcj4t50b8s3ti"]
 
-[ext_resource type="PackedScene" uid="uid://crodb6x8shufn" path="res://Scenes/player.tscn" id="1_oxx6r"]
-[ext_resource type="PackedScene" uid="uid://dmo83ew26svqp" path="res://Scenes/cabfloor.tscn" id="2_dnekg"]
+[ext_resource type="PackedScene" uid="uid://oi5t4alxf7u2" path="res://Scenes/player.tscn" id="1_oxx6r"]
+[ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="2_0whpv"]
+[ext_resource type="PackedScene" uid="uid://ccj6jsj2jhjmt" path="res://Prefabs/Cabinet_Floor.tscn" id="2_hbprv"]
+[ext_resource type="Material" uid="uid://btp8coc7tkknn" path="res://Assets/Shaders/Shadow_Shader.tres" id="4_33kly"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_te4ws"]
+viewport_path = NodePath("Shadow_Container/ShadowViewport")
 
 [node name="Game" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_oxx6r")]
 position = Vector2(-29, -43)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(29, 43)
+script = ExtResource("2_0whpv")
+shadow_camera_path = NodePath("../../Shadow_Container/ShadowViewport/Shadow_Camera")
+shadow_render_path = NodePath("../../Shadow_Container/Shadow_Render")
 
-[node name="StaticBody2D" parent="." instance=ExtResource("2_dnekg")]
-position = Vector2(-5, 699)
+[node name="CabinetFloor" parent="." instance=ExtResource("2_hbprv")]
+position = Vector2(0, 187)
+target_viewport_path = NodePath("../Shadow_Container/ShadowViewport")
+
+[node name="Shadow_Container" type="Node2D" parent="."]
+
+[node name="ShadowViewport" type="SubViewport" parent="Shadow_Container"]
+transparent_bg = true
+size = Vector2i(2048, 2048)
+render_target_update_mode = 4
+
+[node name="Shadow_Camera" type="Camera2D" parent="Shadow_Container/ShadowViewport"]
+
+[node name="Shadow_Render" type="TextureRect" parent="Shadow_Container"]
+z_index = 1
+z_as_relative = false
+material = ExtResource("4_33kly")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 2048.0
+offset_bottom = 2048.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture = SubResource("ViewportTexture_te4ws")
+metadata/_edit_use_anchors_ = true

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://1xodg3ddlugy"
-path="res://.godot/imported/T_Cabinet_Wall.png-8d8a7e97cc21031cb1a1b8a03fb0c949.ctex"
+path="res://.godot/imported/T_Cabinet_Ceiling.png-00e0916407f5129c85e6e2adb2b4d1cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/T_Cabinet_Wall.png"
-dest_files=["res://.godot/imported/T_Cabinet_Wall.png-8d8a7e97cc21031cb1a1b8a03fb0c949.ctex"]
+source_file="res://Assets/Textures/T_Cabinet_Ceiling.png"
+dest_files=["res://.godot/imported/T_Cabinet_Ceiling.png-00e0916407f5129c85e6e2adb2b4d1cb.ctex"]
 
 [params]
 

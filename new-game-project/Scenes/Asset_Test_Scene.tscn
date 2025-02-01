@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dt4w4akrs7j4k"]
+[gd_scene load_steps=10 format=3 uid="uid://bjj55bfmxwotb"]
 
 [ext_resource type="Texture2D" uid="uid://b5c8ewyvvm3we" path="res://Assets/Textures/T_Background.png" id="1_5x5lf"]
 [ext_resource type="Texture2D" uid="uid://ctxrmrvsuo1qx" path="res://Assets/Textures/T_Cabinet_Floor.png" id="2_muea6"]
@@ -92,6 +92,7 @@ z_as_relative = false
 offset_right = 1024.0
 offset_bottom = 1024.0
 texture = ExtResource("4_nlly7")
+metadata/_edit_use_anchors_ = true
 
 [node name="ShadowViewport" type="SubViewport" parent="."]
 size = Vector2i(4096, 2048)
@@ -159,14 +160,14 @@ scale = Vector2(0.5, 0.5)
 [node name="TextureRect" type="TextureRect" parent="ShadowViewport/Dough2"]
 z_index = 1
 z_as_relative = false
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1024.0
+offset_bottom = 1024.0
 texture = ExtResource("7_hwqrv")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = 1
 z_as_relative = false
 material = ExtResource("8_h3px7")
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 4096.0
+offset_bottom = 2048.0
 texture = SubResource("ViewportTexture_x6ona")

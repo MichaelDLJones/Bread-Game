@@ -119,8 +119,8 @@ resource_local_to_scene = true
 size = Vector2(68, 68)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8fmfw"]
-radius = 80.9996
-height = 282.001
+radius = 62.9996
+height = 130.001
 
 [node name="Game" type="Node2D"]
 

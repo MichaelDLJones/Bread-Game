@@ -1005,7 +1005,7 @@ node_b = NodePath("../../Bone-9")
 softness = 60.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(5, 85)
+position = Vector2(8, 103)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("7_8yt00")
@@ -1020,11 +1020,11 @@ position = Vector2(0, -13)
 limit_bottom = 700
 
 [node name="PinJoint2D" type="PinJoint2D" parent="CharacterBody2D"]
-position = Vector2(-146, -28)
+position = Vector2(-149, -46)
 node_a = NodePath("..")
 node_b = NodePath("../../SoftBody2D/Bone-0")
 
 [node name="PinJoint2D2" type="PinJoint2D" parent="CharacterBody2D"]
-position = Vector2(107, -41)
+position = Vector2(104, -59)
 node_a = NodePath("..")
 node_b = NodePath("../../SoftBody2D/Bone-10")

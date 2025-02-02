@@ -1,7 +1,7 @@
 extends Area2D
 
 @onready var timer: Timer = $Timer
-@onready var mgh: AudioStreamPlayer = $Mgh
+@onready var mgh: AudioStreamPlayer = get_node("/root/Global/AudioStreamPlayer")  # Path to the global AudioStreamPlayer
 
 # Array of death sounds
 var death_sounds: Array = [
@@ -10,7 +10,7 @@ var death_sounds: Array = [
 	preload("res://Assets/sounds/untitled.wav")
 ]
 
-func _on_body_entered(_body):
+func _on_body_entered(body):
 	print("You died!")
 	
 	# Pick a random sound from the list

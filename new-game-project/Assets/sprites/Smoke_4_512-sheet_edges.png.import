@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bthov644qfhr2"
-path="res://.godot/imported/Smoke_4_512-sheet.png-3f9b5ebbb1fd7f398c0a98dbbdbdf221.ctex"
+uid="uid://c4fl851gbwyc7"
+path="res://.godot/imported/Smoke_4_512-sheet_edges.png-1a38699ae32333f844df9fb30bdbd55f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/Smoke_4_512-sheet.png"
-dest_files=["res://.godot/imported/Smoke_4_512-sheet.png-3f9b5ebbb1fd7f398c0a98dbbdbdf221.ctex"]
+source_file="res://Assets/sprites/Smoke_4_512-sheet_edges.png"
+dest_files=["res://.godot/imported/Smoke_4_512-sheet_edges.png-1a38699ae32333f844df9fb30bdbd55f.ctex"]
 
 [params]
 

@@ -4,7 +4,6 @@ extends Area2D
 
 var flour_meter_path: NodePath
 var flour_meter: ProgressBar
-#var smoke: AnimatedSprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,9 +13,6 @@ func _ready() -> void:
 		flour_meter_path = get_parent().get_meta("Flour_Meter")
 		flour_meter = get_parent().get_node(flour_meter_path)
 		
-	
-	
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -27,5 +23,6 @@ func _on_body_entered(body):
 		#print("collision")
 		flour_meter.flour = 100.0
 		if (smoke):
+			print("smoke")
 			smoke.play("Smoke")
 		

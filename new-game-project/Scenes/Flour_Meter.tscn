@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://djet8rvadt558"]
 
-[ext_resource type="Script" path="res://Scenes/flour_meter.gd" id="1_ni48k"]
+[ext_resource type="Script" path="res://Scripts/flour_meter.gd" id="1_ni48k"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_05gaw"]
 

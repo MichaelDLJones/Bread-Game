@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ckbg568ovr2ib" path="res://Prefabs/Cabinet_Ceiling.tscn" id="5_qtdqp"]
 [ext_resource type="Script" path="res://Scenes/movement.gd" id="6_ebor8"]
 [ext_resource type="Script" path="res://Scenes/character_body_2d.gd" id="7_8yt00"]
-[ext_resource type="PackedScene" uid="uid://b3bd1yfpqlvjp" path="res://Prefabs/Shelf.tscn" id="9_8a2pw"]
+[ext_resource type="PackedScene" uid="uid://drc30bj6nq0b" path="res://Prefabs/Shelf.tscn" id="9_8a2pw"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_te4ws"]
 viewport_path = NodePath("Shadow_Container/ShadowViewport")
@@ -333,7 +333,7 @@ modification_stack = SubResource("SkeletonModificationStack2D_n5q8g")
 [node name="Bone-0" type="Bone2D" parent="SoftBody2D/Skeleton2D"]
 position = Vector2(115.072, 236.716)
 rotation = 1.5836
-scale = Vector2(1, 1)
+scale = Vector2(0.999909, 0.999909)
 rest = Transform2D(-0.0128131, 0.999918, -0.999918, -0.0128131, 115.072, 236.716)
 auto_calculate_length_and_angle = false
 length = 72.0
@@ -374,6 +374,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-3" type="Bone2D" parent="SoftBody2D/Skeleton2D"]
 position = Vector2(167.346, 296.399)
 rotation = -1.55668
+scale = Vector2(1, 1)
 rest = Transform2D(0.0141102, -0.9999, 0.9999, 0.0141102, 167.346, 296.399)
 auto_calculate_length_and_angle = false
 length = 72.0
@@ -387,7 +388,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-4" type="Bone2D" parent="SoftBody2D/Skeleton2D"]
 position = Vector2(232.294, 190.961)
 rotation = -0.0165826
-scale = Vector2(1, 1)
+scale = Vector2(0.999965, 0.999965)
 rest = Transform2D(0.999863, -0.016574, 0.016574, 0.999863, 232.294, 190.961)
 auto_calculate_length_and_angle = false
 length = 72.0
@@ -456,7 +457,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-9" type="Bone2D" parent="SoftBody2D/Skeleton2D"]
 position = Vector2(290.279, 292.048)
 rotation = -1.64892
-scale = Vector2(0.999997, 0.999997)
+scale = Vector2(0.99999, 0.99999)
 rest = Transform2D(-0.0780562, -0.996949, 0.996949, -0.0780562, 290.279, 292.048)
 auto_calculate_length_and_angle = false
 length = 72.0
@@ -470,7 +471,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-10" type="Bone2D" parent="SoftBody2D/Skeleton2D"]
 position = Vector2(368.219, 223.636)
 rotation = 2.97876
-scale = Vector2(1, 1)
+scale = Vector2(0.999998, 0.999998)
 rest = Transform2D(-0.986772, 0.162114, -0.162114, -0.986772, 368.219, 223.636)
 auto_calculate_length_and_angle = false
 length = 72.0

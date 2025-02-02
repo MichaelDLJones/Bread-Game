@@ -1,17 +1,23 @@
-[gd_scene load_steps=25 format=3 uid="uid://dcj4t50b8s3ti"]
+[gd_scene load_steps=27 format=3 uid="uid://dcj4t50b8s3ti"]
 
 [ext_resource type="Texture2D" uid="uid://b5c8ewyvvm3we" path="res://Assets/Textures/T_Background.png" id="1_fptda"]
 [ext_resource type="PackedScene" uid="uid://ccj6jsj2jhjmt" path="res://Prefabs/Cabinet_Floor.tscn" id="2_hbprv"]
 [ext_resource type="PackedScene" uid="uid://b724cpqe1drqg" path="res://Scenes/killzone.tscn" id="3_wjdh8"]
 [ext_resource type="Texture2D" uid="uid://du4m4lrmwjaom" path="res://Assets/Textures/T_Dough_small.png" id="4_5p83j"]
 [ext_resource type="Material" uid="uid://btp8coc7tkknn" path="res://Assets/Shaders/Shadow_Shader.tres" id="4_33kly"]
+[ext_resource type="PackedScene" uid="uid://ckbg568ovr2ib" path="res://Prefabs/Cabinet_Ceiling.tscn" id="5_qtdqp"]
 [ext_resource type="Script" path="res://Scenes/movement.gd" id="6_ebor8"]
 [ext_resource type="Script" path="res://Scenes/character_body_2d.gd" id="7_8yt00"]
+[ext_resource type="PackedScene" uid="uid://drc30bj6nq0b" path="res://Prefabs/Shelf.tscn" id="9_8a2pw"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_te4ws"]
 viewport_path = NodePath("Shadow_Container/ShadowViewport")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_612by"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8fmfw"]
+radius = 62.9996
+height = 130.001
 
 [sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_k7sv5"]
 resource_local_to_scene = true
@@ -118,10 +124,6 @@ modifications/11 = SubResource("SkeletonModification2DLookAt_gm41l")
 resource_local_to_scene = true
 size = Vector2(68, 68)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8fmfw"]
-radius = 62.9996
-height = 130.001
-
 [node name="Game" type="Node2D"]
 
 [node name="TBackground" type="Sprite2D" parent="."]
@@ -192,6 +194,9 @@ texture = ExtResource("1_fptda")
 position = Vector2(0, 187)
 target_viewport_path = NodePath("../Shadow_Container/ShadowViewport")
 
+[node name="CabinetCeiling" parent="." instance=ExtResource("5_qtdqp")]
+position = Vector2(0, -292)
+
 [node name="Shadow_Container" type="Node2D" parent="."]
 
 [node name="ShadowViewport" type="SubViewport" parent="Shadow_Container"]
@@ -219,7 +224,7 @@ texture = SubResource("ViewportTexture_te4ws")
 metadata/_edit_use_anchors_ = true
 
 [node name="Killzone" parent="." instance=ExtResource("3_wjdh8")]
-position = Vector2(604, 1019)
+position = Vector2(614, 1423)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 shape = SubResource("WorldBoundaryShape2D_612by")
@@ -241,6 +246,31 @@ offset_bottom = 50.0
 rotation = 0.00248861
 theme_override_font_sizes/font_size = 30
 text = "Now, Become Bread."
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(8, 103)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("7_8yt00")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-6, -10)
+rotation = -1.57036
+shape = SubResource("CapsuleShape2D_8fmfw")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(0, -13)
+limit_bottom = 700
+
+[node name="PinJoint2D" type="PinJoint2D" parent="CharacterBody2D"]
+position = Vector2(-149, -46)
+node_a = NodePath("..")
+node_b = NodePath("../../SoftBody2D/Bone-0")
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="CharacterBody2D"]
+position = Vector2(104, -59)
+node_a = NodePath("..")
+node_b = NodePath("../../SoftBody2D/Bone-10")
 
 [node name="SoftBody2D" type="Polygon2D" parent="."]
 position = Vector2(-256, -180)
@@ -1004,27 +1034,11 @@ node_a = NodePath("..")
 node_b = NodePath("../../Bone-9")
 softness = 60.0
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(8, 103)
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("7_8yt00")
+[node name="CabinetFloor2" parent="." instance=ExtResource("2_hbprv")]
+position = Vector2(804, 185)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-6, -10)
-rotation = -1.57036
-shape = SubResource("CapsuleShape2D_8fmfw")
+[node name="CabinetFloor3" parent="." instance=ExtResource("2_hbprv")]
+position = Vector2(1690, 354)
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(0, -13)
-limit_bottom = 700
-
-[node name="PinJoint2D" type="PinJoint2D" parent="CharacterBody2D"]
-position = Vector2(-149, -46)
-node_a = NodePath("..")
-node_b = NodePath("../../SoftBody2D/Bone-0")
-
-[node name="PinJoint2D2" type="PinJoint2D" parent="CharacterBody2D"]
-position = Vector2(104, -59)
-node_a = NodePath("..")
-node_b = NodePath("../../SoftBody2D/Bone-10")
+[node name="Shelf" parent="." instance=ExtResource("9_8a2pw")]
+position = Vector2(2460, 337)

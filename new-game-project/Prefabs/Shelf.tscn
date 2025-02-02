@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3bd1yfpqlvjp"]
+[gd_scene load_steps=5 format=3 uid="uid://drc30bj6nq0b"]
 
 [ext_resource type="Script" path="res://Scripts/shadow_script.gd" id="1_rtie6"]
 [ext_resource type="Texture2D" uid="uid://cx0eokaku7ljh" path="res://Assets/Textures/T_Shelf_Shadowmask.png" id="2_qurcc"]
@@ -19,6 +19,8 @@ region_enabled = true
 region_rect = Rect2(0, 510, 1024, 226)
 
 [node name="Shelf_StaticBody" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shelf_StaticBody"]
 position = Vector2(0, 26)

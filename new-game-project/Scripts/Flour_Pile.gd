@@ -21,7 +21,11 @@ func _process(_delta: float) -> void:
 func _on_body_entered(body):
 	if (body.name == "CharacterBody2D"):
 		#print("collision")
-		flour_meter.flour = 100.0
+		if (flour_meter_path):
+			flour_meter.flour = 100.0
+		else:
+			push_error("Meta data not assigned or assigned incorrectly")
+			
 		if (smoke):
 			#print("smoke")
 			smoke.play("Smoke")

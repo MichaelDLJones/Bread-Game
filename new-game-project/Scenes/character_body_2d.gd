@@ -5,6 +5,15 @@ extends CharacterBody2D
 @export var max_air_speed: float = 1000.0
 @export var air_drag: float = 0.02
 
+@onready var flour_meter = $Camera2D/Node2D/Control/FlourMeter
+
+func _ready():
+	if flour_meter:
+		flour_meter.flour = 100
+	else:
+		print("ERROR FLOURMETER NOT FOUND")
+
+
 # Get the gravity from the project settings to be synced with RigidBody nodes
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -15,7 +24,9 @@ func _physics_process(delta):
 	
 	# Handle jump
 	if is_on_floor() and Input.is_action_just_pressed("ui_accept"):
-		velocity.y = jump_force
+		var flourmult = flour_meter.flour/100
+		velocity.y = jump_force * flourmult
+		flour_meter.flour -= 10
 	
 	# Get input direction
 	var direction = Input.get_axis("ui_left", "ui_right")

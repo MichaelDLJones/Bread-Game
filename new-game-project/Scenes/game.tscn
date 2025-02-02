@@ -7,11 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://du4m4lrmwjaom" path="res://Assets/Textures/T_Dough_small.png" id="4_5p83j"]
 [ext_resource type="Material" uid="uid://btp8coc7tkknn" path="res://Assets/Shaders/Shadow_Shader.tres" id="4_33kly"]
 [ext_resource type="PackedScene" uid="uid://ckbg568ovr2ib" path="res://Prefabs/Cabinet_Ceiling.tscn" id="5_qtdqp"]
-[ext_resource type="PackedScene" uid="uid://cdxfi52c0np6d" path="res://Prefabs/Flour.tscn" id="5_t31go"]
+[ext_resource type="PackedScene" uid="uid://basbykhexewou" path="res://Prefabs/Flour.tscn" id="5_t31go"]
 [ext_resource type="Script" path="res://Scenes/movement.gd" id="6_ebor8"]
 [ext_resource type="Script" path="res://Scenes/character_body_2d.gd" id="7_8yt00"]
-[ext_resource type="PackedScene" uid="uid://b3bd1yfpqlvjp" path="res://Prefabs/Shelf.tscn" id="9_8a2pw"]
-[ext_resource type="PackedScene" uid="uid://daxm3igq1oklv" path="res://Scenes/Flour_Meter.tscn" id="10_7c4ca"]
+[ext_resource type="PackedScene" uid="uid://drc30bj6nq0b" path="res://Prefabs/Shelf.tscn" id="9_8a2pw"]
+[ext_resource type="PackedScene" uid="uid://djet8rvadt558" path="res://Scenes/Flour_Meter.tscn" id="10_7c4ca"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_te4ws"]
 viewport_path = NodePath("Shadow_Container/ShadowViewport")

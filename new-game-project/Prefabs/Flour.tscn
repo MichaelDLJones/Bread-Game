@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://cdxfi52c0np6d"]
+[gd_scene load_steps=57 format=3 uid="uid://basbykhexewou"]
 
 [ext_resource type="Script" path="res://Scripts/shadow_script.gd" id="1_i55pa"]
 [ext_resource type="Texture2D" uid="uid://drfae4hymrrag" path="res://Assets/Textures/Flour_Shdaowmask.png" id="2_m8dpt"]

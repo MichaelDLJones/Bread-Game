@@ -1,6 +1,7 @@
-[gd_scene load_steps=27 format=3 uid="uid://dcj4t50b8s3ti"]
+[gd_scene load_steps=28 format=3 uid="uid://dcj4t50b8s3ti"]
 
 [ext_resource type="Texture2D" uid="uid://b5c8ewyvvm3we" path="res://Assets/Textures/T_Background.png" id="1_fptda"]
+[ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="2_0whpv"]
 [ext_resource type="PackedScene" uid="uid://ccj6jsj2jhjmt" path="res://Prefabs/Cabinet_Floor.tscn" id="2_hbprv"]
 [ext_resource type="PackedScene" uid="uid://b724cpqe1drqg" path="res://Scenes/killzone.tscn" id="3_wjdh8"]
 [ext_resource type="Texture2D" uid="uid://du4m4lrmwjaom" path="res://Assets/Textures/T_Dough_small.png" id="4_5p83j"]
@@ -8,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ckbg568ovr2ib" path="res://Prefabs/Cabinet_Ceiling.tscn" id="5_qtdqp"]
 [ext_resource type="Script" path="res://Scenes/movement.gd" id="6_ebor8"]
 [ext_resource type="Script" path="res://Scenes/character_body_2d.gd" id="7_8yt00"]
-[ext_resource type="PackedScene" uid="uid://drc30bj6nq0b" path="res://Prefabs/Shelf.tscn" id="9_8a2pw"]
+[ext_resource type="PackedScene" uid="uid://b3bd1yfpqlvjp" path="res://Prefabs/Shelf.tscn" id="9_8a2pw"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_te4ws"]
 viewport_path = NodePath("Shadow_Container/ShadowViewport")
@@ -190,12 +191,51 @@ texture = ExtResource("1_fptda")
 position = Vector2(1904, 0)
 texture = ExtResource("1_fptda")
 
-[node name="CabinetFloor" parent="." instance=ExtResource("2_hbprv")]
-position = Vector2(0, 187)
-target_viewport_path = NodePath("../Shadow_Container/ShadowViewport")
+[node name="Environment" type="Node2D" parent="."]
 
-[node name="CabinetCeiling" parent="." instance=ExtResource("5_qtdqp")]
-position = Vector2(0, -292)
+[node name="CabinetFloor" parent="Environment" instance=ExtResource("2_hbprv")]
+position = Vector2(0, 187)
+target_viewport_path = NodePath("../../Shadow_Container/ShadowViewport")
+
+[node name="CabinetCeiling" parent="Environment" instance=ExtResource("5_qtdqp")]
+position = Vector2(1568, -289)
+target_viewport_path = NodePath("../../Shadow_Container/ShadowViewport")
+
+[node name="CabinetFloor2" parent="Environment" instance=ExtResource("2_hbprv")]
+position = Vector2(640, 187)
+target_viewport_path = NodePath("../../Shadow_Container/ShadowViewport")
+
+[node name="CabinetFloor3" parent="Environment" instance=ExtResource("2_hbprv")]
+position = Vector2(1280, 187)
+target_viewport_path = NodePath("../../Shadow_Container/ShadowViewport")
+
+[node name="Shelf" parent="Environment" instance=ExtResource("9_8a2pw")]
+position = Vector2(2123, 2)
+target_viewport_path = NodePath("../../Shadow_Container/ShadowViewport")
+
+[node name="CabinetCeiling2" parent="Environment" instance=ExtResource("5_qtdqp")]
+position = Vector2(2206, -289)
+target_viewport_path = NodePath("../../Shadow_Container/ShadowViewport")
+
+[node name="Shelf2" parent="Environment" instance=ExtResource("9_8a2pw")]
+position = Vector2(2999, 208)
+target_viewport_path = NodePath("../../Shadow_Container/ShadowViewport")
+
+[node name="CabinetFloor4" parent="Environment" instance=ExtResource("2_hbprv")]
+position = Vector2(-641, 187)
+target_viewport_path = NodePath("../../Shadow_Container/ShadowViewport")
+
+[node name="CabinetCeiling3" parent="Environment" instance=ExtResource("5_qtdqp")]
+position = Vector2(-641, 232)
+target_viewport_path = NodePath("../../Shadow_Container/ShadowViewport")
+
+[node name="CabinetCeiling4" parent="Environment" instance=ExtResource("5_qtdqp")]
+position = Vector2(-641, -451)
+target_viewport_path = NodePath("../../Shadow_Container/ShadowViewport")
+
+[node name="CabinetFloor5" parent="Environment" instance=ExtResource("2_hbprv")]
+position = Vector2(4146, 187)
+target_viewport_path = NodePath("../../Shadow_Container/ShadowViewport")
 
 [node name="Shadow_Container" type="Node2D" parent="."]
 
@@ -260,7 +300,11 @@ shape = SubResource("CapsuleShape2D_8fmfw")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(0, -13)
+zoom = Vector2(0.5, 0.5)
 limit_bottom = 700
+script = ExtResource("2_0whpv")
+shadow_camera_path = NodePath("../../Shadow_Container/ShadowViewport/Shadow_Camera")
+shadow_render_path = NodePath("../../Shadow_Container/Shadow_Render")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="CharacterBody2D"]
 position = Vector2(-149, -46)
@@ -288,7 +332,8 @@ modification_stack = SubResource("SkeletonModificationStack2D_n5q8g")
 
 [node name="Bone-0" type="Bone2D" parent="SoftBody2D/Skeleton2D"]
 position = Vector2(115.072, 236.716)
-rotation = 1.58361
+rotation = 1.5836
+scale = Vector2(1, 1)
 rest = Transform2D(-0.0128131, 0.999918, -0.999918, -0.0128131, 115.072, 236.716)
 auto_calculate_length_and_angle = false
 length = 72.0
@@ -301,7 +346,7 @@ metadata/_local_pose_override_enabled_ = true
 
 [node name="Bone-1" type="Bone2D" parent="SoftBody2D/Skeleton2D"]
 position = Vector2(114.334, 294.343)
-rotation = -0.927075
+rotation = -0.927073
 scale = Vector2(1, 1)
 rest = Transform2D(0.600176, -0.799868, 0.799868, 0.600176, 114.334, 294.343)
 auto_calculate_length_and_angle = false
@@ -315,8 +360,7 @@ metadata/_local_pose_override_enabled_ = true
 
 [node name="Bone-2" type="Bone2D" parent="SoftBody2D/Skeleton2D"]
 position = Vector2(168.392, 222.299)
-rotation = 0.233089
-scale = Vector2(1, 1)
+rotation = 0.233087
 rest = Transform2D(0.972957, 0.230984, -0.230984, 0.972957, 168.392, 222.299)
 auto_calculate_length_and_angle = false
 length = 72.0
@@ -329,7 +373,7 @@ metadata/_local_pose_override_enabled_ = true
 
 [node name="Bone-3" type="Bone2D" parent="SoftBody2D/Skeleton2D"]
 position = Vector2(167.346, 296.399)
-rotation = -1.55669
+rotation = -1.55668
 rest = Transform2D(0.0141102, -0.9999, 0.9999, 0.0141102, 167.346, 296.399)
 auto_calculate_length_and_angle = false
 length = 72.0
@@ -342,7 +386,7 @@ metadata/_local_pose_override_enabled_ = true
 
 [node name="Bone-4" type="Bone2D" parent="SoftBody2D/Skeleton2D"]
 position = Vector2(232.294, 190.961)
-rotation = -0.0165747
+rotation = -0.0165826
 scale = Vector2(1, 1)
 rest = Transform2D(0.999863, -0.016574, 0.016574, 0.999863, 232.294, 190.961)
 auto_calculate_length_and_angle = false
@@ -357,7 +401,6 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-5" type="Bone2D" parent="SoftBody2D/Skeleton2D"]
 position = Vector2(239.078, 239.08)
 rotation = -1.71086
-scale = Vector2(1, 1)
 rest = Transform2D(-0.139602, -0.990208, 0.990208, -0.139602, 239.078, 239.08)
 auto_calculate_length_and_angle = false
 length = 72.0
@@ -399,6 +442,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-8" type="Bone2D" parent="SoftBody2D/Skeleton2D"]
 position = Vector2(285.981, 237.147)
 rotation = 2.34522
+scale = Vector2(1, 1)
 rest = Transform2D(-0.699304, 0.714825, -0.714825, -0.699304, 285.981, 237.147)
 auto_calculate_length_and_angle = false
 length = 72.0
@@ -411,7 +455,7 @@ metadata/_local_pose_override_enabled_ = true
 
 [node name="Bone-9" type="Bone2D" parent="SoftBody2D/Skeleton2D"]
 position = Vector2(290.279, 292.048)
-rotation = -1.64893
+rotation = -1.64892
 scale = Vector2(0.999997, 0.999997)
 rest = Transform2D(-0.0780562, -0.996949, 0.996949, -0.0780562, 290.279, 292.048)
 auto_calculate_length_and_angle = false
@@ -426,6 +470,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-10" type="Bone2D" parent="SoftBody2D/Skeleton2D"]
 position = Vector2(368.219, 223.636)
 rotation = 2.97876
+scale = Vector2(1, 1)
 rest = Transform2D(-0.986772, 0.162114, -0.162114, -0.986772, 368.219, 223.636)
 auto_calculate_length_and_angle = false
 length = 72.0
@@ -438,8 +483,7 @@ metadata/_local_pose_override_enabled_ = true
 
 [node name="Bone-11" type="Bone2D" parent="SoftBody2D/Skeleton2D"]
 position = Vector2(369.132, 297.485)
-rotation = -2.51387
-scale = Vector2(1, 1)
+rotation = -2.51386
 rest = Transform2D(-0.809364, -0.587307, 0.587307, -0.809364, 369.132, 297.485)
 auto_calculate_length_and_angle = false
 length = 72.0
@@ -1033,12 +1077,3 @@ rotation = -4.64355
 node_a = NodePath("..")
 node_b = NodePath("../../Bone-9")
 softness = 60.0
-
-[node name="CabinetFloor2" parent="." instance=ExtResource("2_hbprv")]
-position = Vector2(804, 185)
-
-[node name="CabinetFloor3" parent="." instance=ExtResource("2_hbprv")]
-position = Vector2(1690, 354)
-
-[node name="Shelf" parent="." instance=ExtResource("9_8a2pw")]
-position = Vector2(2460, 337)

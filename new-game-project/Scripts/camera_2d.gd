@@ -2,6 +2,7 @@ extends Camera2D
 
 @export var shadow_camera_path: NodePath
 @export var shadow_render_path: NodePath
+var y_lock = global_position.y
 
 var shadow_camera: Camera2D
 var shadow_render: TextureRect
@@ -26,4 +27,5 @@ func _process(_delta: float) -> void:
 		var zoom_invers = Vector2(1.0,1.0) / zoom
 		shadow_render.global_position = global_position - ((shadow_render.size/2.0) * zoom_invers)
 		shadow_render.scale = zoom_invers
-		
+	
+	global_position.y = y_lock

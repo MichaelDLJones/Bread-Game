@@ -8,7 +8,7 @@ var death_sounds: Array = [
 	preload("res://Assets/sounds/untitled.wav")
 ]
 
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	print("You died!")
 	mgh.stream = death_sounds[randi() % death_sounds.size()]
 	mgh.play()

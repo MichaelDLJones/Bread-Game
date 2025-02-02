@@ -1249,3 +1249,6 @@ func _physics_process(delta: float) -> void:
 				deleted_count = deleted_count + 1
 				remove_joint(rigid_body, joint)
 				_last_delete_time = Time.get_ticks_msec()
+				
+				
+				

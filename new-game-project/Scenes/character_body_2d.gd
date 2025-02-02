@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-@export var jump_force: float = -400.0
-@export var air_acceleration: float = 1200.0
-@export var max_air_speed: float = 300.0
+@export var jump_force: float = -600.0
+@export var air_acceleration: float = 1800.0
+@export var max_air_speed: float = 1000.0
 @export var air_drag: float = 0.02
 
 # Get the gravity from the project settings to be synced with RigidBody nodes

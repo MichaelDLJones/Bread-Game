@@ -4,11 +4,8 @@ extends Area2D
 
 var flour_meter_path: NodePath
 var flour_meter: ProgressBar
-<<<<<<< HEAD
 const FlourPile = preload("res://Scripts/Flour_Pile.gd")
-=======
 #var smoke: AnimatedSprite2D
->>>>>>> 3bfbe36a54be753939a2cfea79efa9435a65b9c6
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

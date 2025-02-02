@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://djet8rvadt558"]
+[gd_scene load_steps=7 format=3 uid="uid://djet8rvadt558"]
 
 [ext_resource type="Script" path="res://Scripts/flour_meter.gd" id="1_ni48k"]
+[ext_resource type="AudioStream" uid="uid://bxcvk1l84o64y" path="res://Assets/sounds/Record (online-voice-recorder.com)(2).mp3" id="2_fsg5g"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_05gaw"]
 
@@ -42,8 +43,16 @@ theme_override_styles/background = SubResource("StyleBoxFlat_8fq5m")
 theme_override_styles/fill = SubResource("StyleBoxFlat_kpa4d")
 show_percentage = false
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 16.0
+one_shot = true
+
+[node name="Timer1" type="Timer" parent="."]
 wait_time = 0.4
 one_shot = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="Mgh2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_fsg5g")
+
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Timer1" to="." method="_on_timer_timeout"]

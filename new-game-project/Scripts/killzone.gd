@@ -7,7 +7,8 @@ extends Area2D
 var death_sounds: Array = [
 	preload("res://Assets/sounds/voice-message.mp3"),
 	preload("res://Assets/sounds/Record (online-voice-recorder.com).mp3"),
-	preload("res://Assets/sounds/untitled.wav")
+	preload("res://Assets/sounds/untitled.wav"),
+	preload("res://Assets/sounds/snd_scream.wav")
 ]
 
 func _on_body_entered(_body):

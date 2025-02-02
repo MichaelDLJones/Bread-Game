@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 @export var jump_force: float = -600.0
-@export var air_acceleration: float = 1800.0
-@export var max_air_speed: float = 1000.0
+@export var air_acceleration: float = 800.0
+@export var max_air_speed: float = 2000.0
 @export var air_drag: float = 0.02
 
 @onready var flour_meter = $Camera2D/Node2D/Control/FlourMeter
@@ -24,7 +24,7 @@ func _physics_process(delta):
 	
 	# Handle jump
 	if is_on_floor() and Input.is_action_just_pressed("ui_accept"):
-		var flourmult = flour_meter.flour/100
+		var flourmult = flour_meter.flour/90
 		velocity.y = jump_force * flourmult
 		flour_meter.flour -= 10
 	

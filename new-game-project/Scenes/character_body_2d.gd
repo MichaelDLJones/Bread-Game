@@ -1,47 +1,36 @@
 extends CharacterBody2D
 
-@export var move_speed: float = 300.0
-@export var jump_velocity: float = -400.0
-@export var roll_speed: float = 15.0  # Increased for more chaos
-@export var momentum_factor: float = 0.92  # Preserves movement
-@export var rotation_influence: float = 1.2  # Movement affected by rotation
+@export var jump_force: float = -400.0
+@export var air_acceleration: float = 1200.0
+@export var max_air_speed: float = 300.0
+@export var air_drag: float = 0.02
 
-var angular_velocity: float = 0.0
+# Get the gravity from the project settings to be synced with RigidBody nodes
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-func _physics_process(delta: float) -> void:
-	# Apply gravity with rotational influence
+func _physics_process(delta):
+	# Add gravity
 	if not is_on_floor():
-		var gravity = ProjectSettings.get("physics/2d/default_gravity")
 		velocity.y += gravity * delta
-		# Rotation affects falling
-		velocity.x += sin(rotation) * gravity * delta * 0.5
 	
-	# Handle jump - harder to control when rotated
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = jump_velocity * cos(rotation)  # Jump affected by rotation
-		angular_velocity += velocity.x * 0.01  # Add spin when jumping
+	# Handle jump
+	if is_on_floor() and Input.is_action_just_pressed("ui_accept"):
+		velocity.y = jump_force
 	
-	# Handle movement
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		# Movement affected by current rotation
-		var effective_speed = move_speed * (1.0 + sin(rotation) * rotation_influence)
-		velocity.x += direction * effective_speed * delta
-		angular_velocity += direction * roll_speed * delta
-		
-		# Add some unpredictability to rotation
-		if is_on_floor():
-			angular_velocity += direction * sin(rotation) * roll_speed * 0.5 * delta
+	# Get input direction
+	var direction = Input.get_axis("ui_left", "ui_right")
 	
-	# Apply momentum and bounds
-	velocity.x *= momentum_factor
-	angular_velocity *= momentum_factor
-	
-	# Cap maximum speeds to prevent total loss of control
-	velocity.x = clamp(velocity.x, -move_speed * 2, move_speed * 2)
-	angular_velocity = clamp(angular_velocity, -PI * 2, PI * 2)
-	
-	# Apply rotation
-	rotation += angular_velocity * delta
+	if not is_on_floor():
+		# Apply air acceleration based on input
+		if direction:
+			velocity.x += direction * air_acceleration * delta
+			# Clamp horizontal velocity to max speed
+			velocity.x = clamp(velocity.x, -max_air_speed, max_air_speed)
+		else:
+			# Apply air drag when no input is pressed
+			velocity.x = lerp(velocity.x, 0.0, air_drag)
+	else:
+		# Reset horizontal velocity when on ground
+		velocity.x = 0.0
 	
 	move_and_slide()

@@ -1,11 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://djet8rvadt558"]
+[gd_scene load_steps=6 format=3 uid="uid://daxm3igq1oklv"]
 
 [ext_resource type="Script" path="res://Scripts/flour_meter.gd" id="1_ni48k"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_05gaw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jbq2x"]
-bg_color = Color(0.655214, 0.591751, 0.484248, 1)
+bg_color = Color(0.918504, 0.892084, 0.847782, 1)
+border_width_top = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8fq5m"]
 bg_color = Color(0.118581, 0.118581, 0.118581, 1)
@@ -39,7 +40,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_8fq5m")
 theme_override_styles/fill = SubResource("StyleBoxFlat_kpa4d")
-value = 85.0
 show_percentage = false
 
 [node name="Timer" type="Timer" parent="."]

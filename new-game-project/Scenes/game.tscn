@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dcj4t50b8s3ti"]
+[gd_scene load_steps=31 format=3 uid="uid://dcj4t50b8s3ti"]
 
 [ext_resource type="Texture2D" uid="uid://b5c8ewyvvm3we" path="res://Assets/Textures/T_Background.png" id="1_fptda"]
 [ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="2_0whpv"]
@@ -7,9 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://du4m4lrmwjaom" path="res://Assets/Textures/T_Dough_small.png" id="4_5p83j"]
 [ext_resource type="Material" uid="uid://btp8coc7tkknn" path="res://Assets/Shaders/Shadow_Shader.tres" id="4_33kly"]
 [ext_resource type="PackedScene" uid="uid://ckbg568ovr2ib" path="res://Prefabs/Cabinet_Ceiling.tscn" id="5_qtdqp"]
+[ext_resource type="PackedScene" uid="uid://cdxfi52c0np6d" path="res://Prefabs/Flour.tscn" id="5_t31go"]
 [ext_resource type="Script" path="res://Scenes/movement.gd" id="6_ebor8"]
 [ext_resource type="Script" path="res://Scenes/character_body_2d.gd" id="7_8yt00"]
-[ext_resource type="PackedScene" uid="uid://drc30bj6nq0b" path="res://Prefabs/Shelf.tscn" id="9_8a2pw"]
+[ext_resource type="PackedScene" uid="uid://b3bd1yfpqlvjp" path="res://Prefabs/Shelf.tscn" id="9_8a2pw"]
+[ext_resource type="PackedScene" uid="uid://daxm3igq1oklv" path="res://Scenes/Flour_Meter.tscn" id="10_7c4ca"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_te4ws"]
 viewport_path = NodePath("Shadow_Container/ShadowViewport")
@@ -19,6 +21,8 @@ viewport_path = NodePath("Shadow_Container/ShadowViewport")
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8fmfw"]
 radius = 62.9996
 height = 130.001
+
+[sub_resource type="Theme" id="Theme_ldij6"]
 
 [sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_k7sv5"]
 resource_local_to_scene = true
@@ -237,6 +241,12 @@ target_viewport_path = NodePath("../../Shadow_Container/ShadowViewport")
 position = Vector2(4146, 187)
 target_viewport_path = NodePath("../../Shadow_Container/ShadowViewport")
 
+[node name="Flour" parent="Environment" instance=ExtResource("5_t31go")]
+position = Vector2(1054, 187)
+scale = Vector2(0.5, 0.5)
+target_viewport_path = NodePath("../../Shadow_Container/ShadowViewport")
+metadata/Flour_Meter = NodePath("../../CharacterBody2D/Camera2D/Node2D/Control/FlourMeter")
+
 [node name="Shadow_Container" type="Node2D" parent="."]
 
 [node name="ShadowViewport" type="SubViewport" parent="Shadow_Container"]
@@ -306,6 +316,23 @@ script = ExtResource("2_0whpv")
 shadow_camera_path = NodePath("../../Shadow_Container/ShadowViewport/Shadow_Camera")
 shadow_render_path = NodePath("../../Shadow_Container/Shadow_Render")
 
+[node name="Node2D" type="Node2D" parent="CharacterBody2D/Camera2D"]
+z_index = 5
+position = Vector2(-500, 550)
+
+[node name="Control" type="Control" parent="CharacterBody2D/Camera2D/Node2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_ldij6")
+
+[node name="FlourMeter" parent="CharacterBody2D/Camera2D/Node2D/Control" instance=ExtResource("10_7c4ca")]
+layout_mode = 0
+offset_right = 1000.0
+offset_bottom = 30.0
+value = 10.0
+
 [node name="PinJoint2D" type="PinJoint2D" parent="CharacterBody2D"]
 position = Vector2(-149, -46)
 node_a = NodePath("..")
@@ -317,6 +344,7 @@ node_a = NodePath("..")
 node_b = NodePath("../../SoftBody2D/Bone-10")
 
 [node name="SoftBody2D" type="Polygon2D" parent="."]
+z_index = 4
 position = Vector2(-256, -180)
 texture = ExtResource("4_5p83j")
 skeleton = NodePath("Skeleton2D")

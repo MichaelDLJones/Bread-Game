@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfqvrs0ryadxx"]
+
+[ext_resource type="Script" path="res://Scripts/shadow_script.gd" id="1_4u3m3"]
+[ext_resource type="Texture2D" uid="uid://cklm1w3asm2re" path="res://Assets/Textures/T_Oven_Open_Shadowmask.png" id="2_gphxm"]
+[ext_resource type="Texture2D" uid="uid://cg7xohor20bn2" path="res://Assets/Textures/T_Oven_Open.png" id="3_fa35a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dm7sn"]
+size = Vector2(642, 306)
+
+[node name="Oven" type="Node2D" node_paths=PackedStringArray("target_shadow_Sprite")]
+script = ExtResource("1_4u3m3")
+target_shadow_Sprite = NodePath("Oven_Shadow")
+
+[node name="Oven_Shadow" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(0, 512)
+texture = ExtResource("2_gphxm")
+
+[node name="Oven_StaticBody" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Oven_StaticBody"]
+position = Vector2(0, 577)
+shape = SubResource("RectangleShape2D_dm7sn")
+
+[node name="Oven_Sprite" type="Sprite2D" parent="Oven_StaticBody"]
+z_index = 2
+position = Vector2(0, 512)
+texture = ExtResource("3_fa35a")
+region_rect = Rect2(191, 0, 643, 730)

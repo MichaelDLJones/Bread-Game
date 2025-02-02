@@ -23,6 +23,6 @@ func _on_body_entered(body):
 		#print("collision")
 		flour_meter.flour = 100.0
 		if (smoke):
-			print("smoke")
+			#print("smoke")
 			smoke.play("Smoke")
 		

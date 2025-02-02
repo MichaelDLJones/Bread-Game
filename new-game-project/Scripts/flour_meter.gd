@@ -10,8 +10,8 @@ func _set_flour(new_flour):
 	flour = min(max_value, new_flour)
 	value = flour
 	
-	if flour <= 0:
-		queue_free()
+	#if flour <= 0:
+	#	queue_free()
 		
 	if flour < prev_flour:
 		timer.start()

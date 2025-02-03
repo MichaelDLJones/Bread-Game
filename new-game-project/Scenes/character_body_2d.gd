@@ -49,3 +49,7 @@ func _physics_process(delta):
 	
 	# Update was_in_air state
 	was_in_air = not is_on_floor()
+	
+func _input(event):
+	if event.is_action_pressed("Exit"):
+		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

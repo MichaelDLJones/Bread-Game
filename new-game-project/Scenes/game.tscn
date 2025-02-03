@@ -11,7 +11,7 @@
 [ext_resource type="Script" path="res://Scenes/movement.gd" id="6_ebor8"]
 [ext_resource type="PackedScene" uid="uid://cio1c3cvfkc10" path="res://Prefabs/Plant_01.tscn" id="6_yi3sh"]
 [ext_resource type="Script" path="res://Scenes/character_body_2d.gd" id="7_8yt00"]
-[ext_resource type="PackedScene" uid="uid://c2p5mv5reg6xv" path="res://Prefabs/Oven.tscn" id="7_wp41t"]
+[ext_resource type="PackedScene" uid="uid://bfqvrs0ryadxx" path="res://Prefabs/Oven.tscn" id="7_wp41t"]
 [ext_resource type="PackedScene" uid="uid://drc30bj6nq0b" path="res://Prefabs/Shelf.tscn" id="9_8a2pw"]
 [ext_resource type="PackedScene" uid="uid://djet8rvadt558" path="res://Scenes/Flour_Meter.tscn" id="10_7c4ca"]
 [ext_resource type="AudioStream" uid="uid://cj3h4fghe17kk" path="res://Assets/sounds/Thwack_2.mp3" id="10_ictea"]
@@ -434,6 +434,7 @@ target_viewport_path = NodePath("../../../Shadow_Container/ShadowViewport")
 
 [node name="Oven2" parent="Environment" instance=ExtResource("7_wp41t")]
 position = Vector2(19467, 2)
+target_viewport_path = NodePath("../../Shadow_Container/ShadowViewport")
 
 [node name="Shadow_Container" type="Node2D" parent="."]
 
@@ -687,7 +688,6 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-8" type="Bone2D" parent="DoughDude/SoftBody2D/Skeleton2D"]
 position = Vector2(285.981, 237.147)
 rotation = 2.34522
-scale = Vector2(1, 1)
 rest = Transform2D(-0.699304, 0.714825, -0.714825, -0.699304, 285.981, 237.147)
 auto_calculate_length_and_angle = false
 length = 72.0

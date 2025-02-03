@@ -52,4 +52,4 @@ func _physics_process(delta):
 	
 func _input(event):
 	if event.is_action_pressed("Exit"):
-		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")

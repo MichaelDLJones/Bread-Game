@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://c2p5mv5reg6xv"]
+[gd_scene load_steps=52 format=3 uid="uid://bfqvrs0ryadxx"]
 
 [ext_resource type="Script" path="res://Scripts/shadow_script.gd" id="1_4u3m3"]
 [ext_resource type="Texture2D" uid="uid://cklm1w3asm2re" path="res://Assets/Textures/T_Oven_Open_Shadowmask.png" id="2_gphxm"]

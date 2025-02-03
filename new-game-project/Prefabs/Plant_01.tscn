@@ -21,17 +21,11 @@ size = Vector2(292, 46)
 
 [node name="Plant_01" type="Node2D" node_paths=PackedStringArray("target_shadow_Sprite")]
 script = ExtResource("1_hnh0e")
-target_shadow_Sprite = NodePath("StaticBody2D/Plant_Shadow")
+target_shadow_Sprite = NodePath("Plant_Shadow")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 3
 collision_mask = 3
-
-[node name="Plant_Shadow" type="Sprite2D" parent="StaticBody2D"]
-z_index = 1
-position = Vector2(-23, -234)
-texture = ExtResource("2_a17qs")
-region_rect = Rect2(0, 510, 1024, 226)
 
 [node name="Plant_Sprite" type="Sprite2D" parent="StaticBody2D"]
 z_index = 2
@@ -62,3 +56,9 @@ shape = SubResource("RectangleShape2D_g3o3i")
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(6, -684)
 shape = SubResource("RectangleShape2D_o4wpl")
+
+[node name="Plant_Shadow" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-23, -234)
+texture = ExtResource("2_a17qs")
+region_rect = Rect2(0, 510, 1024, 226)

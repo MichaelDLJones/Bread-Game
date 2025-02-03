@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpfyb03o1qv6r"]
+[gd_scene load_steps=10 format=3 uid="uid://diasg5jwy76di"]
 
 [ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_qco4u"]
+[ext_resource type="Texture2D" uid="uid://b5c8ewyvvm3we" path="res://Assets/Textures/T_Background.png" id="2_k2pjt"]
+[ext_resource type="Texture2D" uid="uid://dc8vjvw6jgnxy" path="res://Assets/Textures/Logo_with_shadow.png" id="3_k68n4"]
+[ext_resource type="Shader" path="res://Assets/Shaders/Simple_Shadow.gdshader" id="4_en2lq"]
+[ext_resource type="Texture2D" uid="uid://c4uygiicio21k" path="res://Assets/Textures/T_Plant_01_Shadowmask.png" id="5_4ctb3"]
+[ext_resource type="Texture2D" uid="uid://c3gj486oghiq7" path="res://Assets/Textures/T_Plant_01.png" id="6_safgv"]
+[ext_resource type="Texture2D" uid="uid://bhlcafn4s8acx" path="res://Assets/Textures/T_Cabinet_Ceiling_Shadowmask.png" id="7_wo4bf"]
+[ext_resource type="Texture2D" uid="uid://ctxrmrvsuo1qx" path="res://Assets/Textures/T_Cabinet_Floor.png" id="8_iyfm1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tlpml"]
+shader = ExtResource("4_en2lq")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -15,12 +25,27 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qco4u")
 
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(213, -92)
+scale = Vector2(0.47, 0.47)
+texture = ExtResource("2_k2pjt")
+
+[node name="Background2" type="Sprite2D" parent="."]
+position = Vector2(1175, -92)
+scale = Vector2(0.47, 0.47)
+texture = ExtResource("2_k2pjt")
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(346, -352)
+scale = Vector2(0.46, 0.46)
+texture = ExtResource("3_k68n4")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 155.0
-offset_top = -283.0
+offset_top = -124.0
 offset_right = 513.0
-offset_bottom = -217.0
+offset_bottom = -58.0
 
 [node name="StartButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -31,4 +56,37 @@ layout_mode = 2
 text = "Quit"
 
 [node name="Camera2D" type="Camera2D" parent="VBoxContainer"]
-position = Vector2(184, 41)
+position = Vector2(184, -103)
+
+[node name="Plant" type="Node2D" parent="."]
+position = Vector2(-68, -240)
+scale = Vector2(0.175, 0.175)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Plant"]
+material = SubResource("ShaderMaterial_tlpml")
+texture = ExtResource("5_4ctb3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Plant"]
+texture = ExtResource("6_safgv")
+
+[node name="Cabinet" type="Node2D" parent="."]
+position = Vector2(-170, 41)
+scale = Vector2(0.47, 0.47)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Cabinet"]
+material = SubResource("ShaderMaterial_tlpml")
+texture = ExtResource("7_wo4bf")
+
+[node name="Sprite2D" type="Sprite2D" parent="Cabinet"]
+texture = ExtResource("8_iyfm1")
+
+[node name="Cabinet2" type="Node2D" parent="."]
+position = Vector2(856, 41)
+scale = Vector2(0.47, 0.47)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Cabinet2"]
+material = SubResource("ShaderMaterial_tlpml")
+texture = ExtResource("7_wo4bf")
+
+[node name="Sprite2D" type="Sprite2D" parent="Cabinet2"]
+texture = ExtResource("8_iyfm1")

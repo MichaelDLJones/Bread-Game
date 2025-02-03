@@ -10,10 +10,12 @@ config_version=5
 
 [application]
 
-config/name="Bread Game"
+config/name="Doh!"
 run/main_scene="res://Scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.262745, 0.6, 0.964706, 1)
+boot_splash/image="res://Assets/Textures/Logo_with_shadow.png"
+config/icon="res://Assets/Textures/Logo_with_shadow.png"
 
 [autoload]
 

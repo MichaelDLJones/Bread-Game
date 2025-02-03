@@ -6,7 +6,7 @@ func _ready():
 	$VBoxContainer/QuitButton.connect("pressed", _on_quit_button_pressed)
 
 func _on_start_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/game.tscn")  # Change to your game scene
+	get_tree().change_scene_to_file("res://Scenes/game.tscn")  # Change to your game scene
 
 func _on_quit_button_pressed():
 	get_tree().quit()  # Exits the game

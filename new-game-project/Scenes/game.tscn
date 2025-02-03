@@ -491,7 +491,7 @@ node_a = NodePath("..")
 node_b = NodePath("../../SoftBody2D/Bone-10")
 
 [node name="LandingSound" type="AudioStreamPlayer2D" parent="DoughDude/CharacterBody2D"]
-position = Vector2(3893, -259)
+position = Vector2(-5.99976, -27)
 rotation = 0.00248861
 stream = ExtResource("10_ictea")
 volume_db = 24.0
@@ -568,7 +568,7 @@ metadata/_local_pose_override_enabled_ = true
 
 [node name="Bone-4" type="Bone2D" parent="DoughDude/SoftBody2D/Skeleton2D"]
 position = Vector2(232.294, 190.961)
-rotation = -0.0165825
+rotation = -0.0165826
 scale = Vector2(0.999965, 0.999965)
 rest = Transform2D(0.999863, -0.016574, 0.016574, 0.999863, 232.294, 190.961)
 auto_calculate_length_and_angle = false
